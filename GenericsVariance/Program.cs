@@ -32,10 +32,12 @@ namespace GenericsVariance
             */
 
             // https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance
+            // https://agirlamonggeeks.com/2019/05/29/vs-in-generic-interfaces-contravariance-vs-covariance-the-easier-part-1/
             // Covariance:
             //  - Enables you to use a more derived type than originally specified.
+            //  - out keyword, means that T can be only returned as method results or property
             // Danske ord:
-            // Den kan bruges til klasser der er nedarvet, fra en base klasse
+            // Den kan bruges til klasser der er nedarvet, fra en base klasse. 
             processor.ProcessAnimals(birdsGet);   // Case A - Only works as a co-variant (by adding out keyword)
             processor.ProcessAnimals(animalsGet); // Case B
 
@@ -46,10 +48,11 @@ namespace GenericsVariance
             processor.InsertAnimals(animalsSet);  // Case F
 
             // https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance
+            // https://agirlamonggeeks.com/2019/05/29/vs-in-generic-interfaces-contravariance-vs-covariance-the-easier-part-1/
             // Contravariance:
             //  - Enables you to use a more generic (less derived) type than originally specified.
+            //  - in keyword, means that T can be only passed as a parameter to a method
             // Danske ord:
-            // Det modsatte af Covariance,
             // Den kan bruges til base klasser, som har nedarvninge af andre klasser
             processor.InsertBirds(birdsSet);      // Case G
             processor.InsertBirds(animalsSet);    // Case H - Only works as a contra-variant (by adding in keyword)
