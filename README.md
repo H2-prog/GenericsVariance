@@ -26,17 +26,17 @@ the specific type of the parameter in each call).
 parameter T to be co-variant, by adding the keyword out just before 
 the T, like this: ICollectionGet<out T>.
 7. Go back to Program.cs. Which case(s) that were previously invalid 
-are now valid? See if you understand why…
+are now valid? See if you understand why...
 8. Now open the ICollectionSet<T> interface. Declare the type 
 parameter T to be contra-variant, by adding the keyword in just 
 before the T, like this: ICollectionSet<in T>.
 9. Go back to Program.cs. Which case(s) that were previously invalid 
-are now valid? See if you understand why…
+are now valid? See if you understand why...
 
 ## Bonus steps
 10. Two cases remain invalid. Do you think we in any way could fix this 
 by further adjustments of the interfaces?
 11. Since the Collection class implements 
-both ICollectionGet<T> and ICollectionSet<T>, wouldn’t it be easier 
+both ICollectionGet<T> and ICollectionSet<T>, wouldn't it be easier 
 just to have a single interface ICollection<T>, containing all methods 
 from the two interfaces? What would the consequences be?
