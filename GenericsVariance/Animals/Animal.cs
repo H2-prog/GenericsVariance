@@ -15,5 +15,6 @@
         }
 
         public abstract string Sound();
+        public abstract void Action();
     }
 }

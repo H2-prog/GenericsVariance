@@ -13,6 +13,11 @@ namespace GenericsVariance.Animals
             Console.WriteLine("*Cat purrs...");
         }
 
+        public override void Action()
+        {
+            Purr();
+        }
+
         public override string Sound()
         {
             return "Meow";

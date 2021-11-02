@@ -13,6 +13,11 @@ namespace GenericsVariance.Animals
             Console.WriteLine("*Bird flaps wings...");
         }
 
+        public override void Action()
+        {
+            FlapWings();
+        }
+
         public override string Sound()
         {
             return "Tweet";

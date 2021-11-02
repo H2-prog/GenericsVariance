@@ -47,11 +47,11 @@ namespace GenericsVariance
             for (int index = 0; index < 5; index++)
             {
                 Bird b = new Bird("Tweety");
-                b.FlapWings();
+                b.Action();
                 animals.Set(b); // Why does this work..?
 
                 Cat c = new Cat("Spot");
-                c.Purr();
+                c.Action();
                 //animals.Set(c); // Why does this work..?
             }
         }
@@ -61,11 +61,11 @@ namespace GenericsVariance
             for (int index = 0; index < 5; index++)
             {
                 Bird b = new Bird("Tweety");
-                b.FlapWings();
+                b.Action();
                 birds.Set(b);
 
                 Cat c = new Cat("Spot");
-                c.Purr();
+                c.Action();
                 // birds.SetAnimal(c); // Why does this NOT work...?
             }
         }
@@ -84,18 +84,18 @@ namespace GenericsVariance
         //    }
         //}
 
-        public void InsertBirds(ICollectionSet<Bird> birds)
-        {
-            for (int index = 0; index < 5; index++)
-            {
-                Bird b = new Bird("Tweety");
-                b.FlapWings();
-                birds.Set(b);
+        //public void InsertBirds(ICollectionSet<Bird> birds)
+        //{
+        //    for (int index = 0; index < 5; index++)
+        //    {
+        //        Bird b = new Bird("Tweety");
+        //        b.FlapWings();
+        //        birds.Set(b);
 
-                Cat c = new Cat("Spot");
-                c.Purr();
-                // birds.SetAnimal(c); // Why does this NOT work...?
-            }
-        }
+        //        Cat c = new Cat("Spot");
+        //        c.Purr();
+        //        // birds.SetAnimal(c); // Why does this NOT work...?
+        //    }
+        //}
     }
 }
