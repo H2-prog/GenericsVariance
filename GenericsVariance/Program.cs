@@ -10,15 +10,23 @@ namespace GenericsVariance
         {
             // No problem, since Collection implements 
             // ICollectionGet and ICollectionSet
-            Collection<Bird> birds = new Collection<Bird>();
-            ICollectionGet<Bird> birdsGet = birds;
-            ICollectionSet<Bird> birdsSet = birds;
+            //Collection<Bird> birds = new Collection<Bird>();
+            //ICollectionGet<Bird> birdsGet = birds;
+            //ICollectionSet<Bird> birdsSet = birds;
+
+            BetterCollection<Bird, Animal> birds = new BetterCollection<Bird, Animal>();
+            IBetterCollection<Bird, Animal> birdCollection = birds;
+            //ICollectionGet<Bird> birdsGet = birds;
+            //ICollectionSet<Bird> birdsSet = birds;
 
             // No problem, since Collection implements 
             // ICollectionGet and ICollectionSet
-            Collection<Animal> animals = new Collection<Animal>();
-            ICollectionGet<Animal> animalsGet = animals;
-            ICollectionSet<Animal> animalsSet = animals;
+            //Collection<Animal> animals = new Collection<Animal>();
+            //ICollectionGet<Animal> animalsGet = animals;
+            //ICollectionSet<Animal> animalsSet = animals;
+
+            BetterCollection<Bird, Animal> animals = new BetterCollection<Bird, Animal>();
+            IBetterCollection<Bird, Animal> animalCollection = animals;
 
 
             AnimalProcessor processor = new AnimalProcessor();
@@ -44,17 +52,25 @@ namespace GenericsVariance
             //  - in keyword, means that T can be only passed as a parameter to a method
             // Danske ord:
             // Den kan bruges til base klasser, som har nedarvninge af andre klasser
-            processor.ProcessAnimals(birdsGet);   // Case A - Only works as a co-variant (by adding out keyword)
-            processor.ProcessAnimals(animalsGet); // Case B
+            processor.ProcessAnimals(birdCollection);
+            processor.ProcessAnimals(animalCollection);
+            //processor.ProcessAnimals(birdsGet);   // Case A - Only works as a co-variant (by adding out keyword)
+            //processor.ProcessAnimals(animalsGet); // Case B
 
-            processor.ProcessBirds(birdsGet);     // Case C
-            processor.ProcessBirds(animalsGet);   // Case D - will not work...
+            processor.ProcessBirds(birdCollection);
+            processor.ProcessBirds(animalCollection);
+            //processor.ProcessBirds(birdsGet);     // Case C
+            //processor.ProcessBirds(animalsGet);   // Case D - will not work...
 
-            processor.InsertAnimals(birdsSet);    // Case E - Will not work...
-            processor.InsertAnimals(animalsSet);  // Case F
+            processor.InsertAnimals(birdCollection);
+            processor.InsertAnimals(animalCollection);
+            //processor.InsertAnimals(birdsSet);    // Case E - Will not work...
+            //processor.InsertAnimals(animalsSet);  // Case F
 
-            processor.InsertBirds(birdsSet);      // Case G
-            processor.InsertBirds(animalsSet);    // Case H - Only works as a contra-variant (by adding in keyword)
+            processor.InsertBirds(birdCollection);
+            processor.InsertBirds(animalCollection);
+            //processor.InsertBirds(birdsSet);      // Case G
+            //processor.InsertBirds(animalsSet);    // Case H - Only works as a contra-variant (by adding in keyword)
 
             KeepConsoleWindowOpen();
         }
