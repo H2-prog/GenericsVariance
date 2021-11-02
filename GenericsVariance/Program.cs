@@ -58,13 +58,13 @@ namespace GenericsVariance
             //processor.ProcessAnimals(animalsGet); // Case B
 
             processor.ProcessBirds(birdCollection);
-            processor.ProcessBirds(animalCollection);
+            //processor.ProcessBirds(animalCollection);
             //processor.ProcessBirds(birdsGet);     // Case C
-            //processor.ProcessBirds(animalsGet);   // Case D - will not work...
+            //processor.ProcessBirds(animalsGet);   // Case D - will not work... (Delete this)
 
-            processor.InsertAnimals(birdCollection);
+            //processor.InsertAnimals(birdCollection);
             processor.InsertAnimals(animalCollection);
-            //processor.InsertAnimals(birdsSet);    // Case E - Will not work...
+            //processor.InsertAnimals(birdsSet);    // Case E - Will not work... (Delete this)
             //processor.InsertAnimals(animalsSet);  // Case F
 
             processor.InsertBirds(birdCollection);
